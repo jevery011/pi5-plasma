@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: sudo apt-get update && sudo apt-get install -y shellcheck
-      - run: ./lint.sh
+      - run: bash lint.sh
 
   build:
     needs: lint
@@ -43,7 +43,7 @@ jobs:
       - name: Build image
         env:
           VERSION: ${{ github.ref_type == 'tag' && github.ref_name || format('main-{0}', github.sha) }}
-        run: ./build.sh
+        run: bash build.sh
 
       - name: Upload image artifact
         uses: actions/upload-artifact@v4
