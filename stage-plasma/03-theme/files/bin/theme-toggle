@@ -1,0 +1,12 @@
+#!/bin/bash
+# Flip between the Pi 5 light and dark global themes.
+# Usage: theme-toggle [light|dark]   (no argument = flip)
+LIGHT=dev.jaxx.pi5.light
+DARK=dev.jaxx.pi5.dark
+current=$(kreadconfig6 --file kdeglobals --group KDE --key LookAndFeelPackage)
+case "${1:-}" in
+	light) target=$LIGHT ;;
+	dark)  target=$DARK ;;
+	*)     [ "$current" = "$DARK" ] && target=$LIGHT || target=$DARK ;;
+esac
+plasma-apply-lookandfeel -a "$target"

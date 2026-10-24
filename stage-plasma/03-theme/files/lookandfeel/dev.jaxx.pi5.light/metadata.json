@@ -1,0 +1,12 @@
+{
+  "KPackageStructure": "Plasma/LookAndFeel",
+  "KPlugin": {
+    "Id": "dev.jaxx.pi5.light",
+    "Name": "Pi 5 Light",
+    "Description": "Pi 5 Plasma - Pi 5 Light",
+    "Authors": [{"Name": "Jaxx"}],
+    "License": "GPL-3.0+",
+    "Version": "0.1"
+  },
+  "X-Plasma-APIVersion": "2"
+}

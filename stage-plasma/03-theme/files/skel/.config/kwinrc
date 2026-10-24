@@ -1,0 +1,12 @@
+[Compositing]
+LatencyPolicy=Low
+AllowTearing=false
+
+[Plugins]
+blurEnabled=true
+slideEnabled=true
+squashEnabled=false
+magiclampEnabled=true
+
+[Windows]
+BorderlessMaximizedWindows=true

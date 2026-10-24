@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Claude Code
+Comment=AI coding agent in the terminal
+Exec=konsole --workdir %h/Projects -e claude
+Icon=utilities-terminal
+Terminal=false
+Categories=Development;
+Keywords=ai;claude;code;

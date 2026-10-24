@@ -1,0 +1,11 @@
+[KDE]
+LookAndFeelPackage=dev.jaxx.pi5.dark
+SingleClick=false
+AnimationDurationFactor=0.5
+
+[General]
+ColorScheme=BreezeDark
+AccentColor=97,175,239
+
+[Icons]
+Theme=breeze-dark

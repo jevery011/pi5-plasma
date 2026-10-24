@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Toggle Light/Dark Theme
+Comment=Switch between Pi 5 Light and Pi 5 Dark
+Exec=theme-toggle
+Icon=color-management
+Terminal=false
+Categories=Settings;
+Keywords=theme;dark;light;toggle;
+NoDisplay=false

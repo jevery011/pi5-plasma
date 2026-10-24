@@ -1,0 +1,12 @@
+#!/bin/bash
+# Snapshot boot time, idle memory and running services for before/after comparison.
+# Run ~2 minutes after logging in, three times, and keep the CSV.
+out=${1:-$HOME/pi5-bench.csv}
+boot=$(systemd-analyze 2>/dev/null | head -1 | grep -oE '= [0-9.]+s' | tr -d '= s')
+used=$(free -m | awk '/^Mem:/{print $3}')
+avail=$(free -m | awk '/^Mem:/{print $7}')
+zram=$(swapon --show=NAME,SIZE --noheadings 2>/dev/null | grep -c zram)
+svcs=$(systemctl list-units --type=service --state=running --no-legend | wc -l)
+theme=$(kreadconfig6 --file kdeglobals --group KDE --key LookAndFeelPackage 2>/dev/null)
+[ -f "$out" ] || echo "timestamp,boot_s,mem_used_mb,mem_avail_mb,zram_devices,running_services,theme" > "$out"
+echo "$(date -Is),$boot,$used,$avail,$zram,$svcs,$theme" | tee -a "$out"
