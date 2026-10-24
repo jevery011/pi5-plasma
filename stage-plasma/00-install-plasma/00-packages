@@ -1,5 +1,5 @@
 plasma-desktop
-plasma-workspace-wayland
+plasma-workspace
 sddm
 sddm-theme-breeze
 plasma-nm
@@ -18,7 +18,7 @@ dolphin
 kate
 ark
 gwenview
-spectacle
+kde-spectacle
 mesa-vulkan-drivers
 libgl1-mesa-dri
 fonts-noto
