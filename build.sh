@@ -21,11 +21,13 @@ fi
 
 echo ">> syncing stage-plasma and config into pi-gen"
 rsync -a --delete stage-plasma/ "$PIGEN/stage-plasma/"
+find "$PIGEN/stage-plasma" -name '*.sh' -exec chmod +x {} +
+chmod +x "$PIGEN/stage-plasma/prerun.sh"
 cp config "$PIGEN/config"
 touch "$PIGEN/stage2/SKIP_IMAGES"      # export only our image, not Lite
 
 echo ">> building ($VERSION)"
-( cd "$PIGEN" && CONTINUE=1 PRESERVE_CONTAINER=1 ./build-docker.sh )
+( cd "$PIGEN" && CONTINUE=1 PRESERVE_CONTAINER=1 bash build-docker.sh )
 
 echo ">> collecting output"
 mkdir -p out
