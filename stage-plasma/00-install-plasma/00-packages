@@ -23,3 +23,5 @@ mesa-vulkan-drivers
 libgl1-mesa-dri
 fonts-noto
 fonts-noto-color-emoji
+libinput10
+xserver-xorg-input-libinput
